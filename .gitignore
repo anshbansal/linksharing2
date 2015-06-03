@@ -34,5 +34,5 @@
 # "temporary" build files
 /target
 .idea
-
+cobertura.ser
 
