@@ -6,3 +6,6 @@ branches:
     - master
 script: ./grailsw refresh-dependencies
      && ./grailsw test-app
+cache:
+  directories:
+  - $HOME/.m2
