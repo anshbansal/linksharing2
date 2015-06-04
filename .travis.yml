@@ -4,8 +4,11 @@ jdk:
 branches:
   only:
     - master
-script: ./grailsw refresh-dependencies
-     && ./grailsw test-app -echoOut -echoErr
+script:
+  - ./grailsw refresh-dependencies
+  - ./grailsw test-app -echoOut -echoErr -coverage -xml
+after_success:
+  - ./grailsw coveralls
 cache:
   directories:
   - $HOME/.m2
