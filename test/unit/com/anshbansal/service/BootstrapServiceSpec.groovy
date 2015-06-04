@@ -15,8 +15,5 @@ class BootstrapServiceSpec extends Specification {
         then:
         user.email == "test"
         user.password == "igdefault"
-
-        and:
-        false
     }
 }
