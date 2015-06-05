@@ -2,7 +2,7 @@
     "name": "linksharing2",
     "version": "0.0.0",
     "dependencies": {
-        "bower": "1.3.8",
+        "bower": "1.4.1",
         "grunt": "^0.4.5",
         "grunt-shell": "^0.7.0"
     },
