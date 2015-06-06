@@ -39,5 +39,6 @@
 .classpath
 cobertura.ser
 web-app/bower-components
+grails-app/assets/bower_components
 node_modules
 npm-debug.log
