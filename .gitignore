@@ -34,6 +34,9 @@
 # "temporary" build files
 /target
 .idea
+*.iml
+.project
+.classpath
 cobertura.ser
 web-app/bower-components
 node_modules
