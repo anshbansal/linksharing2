@@ -44,6 +44,7 @@
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-provided-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/resources" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/scriptCache" />
+      <excludeFolder url="file://$MODULE_DIR$/target/work/tomcat" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -127,5 +128,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="linksharing2-grailsPlugins" />
+    <orderEntry type="library" name="linksharing2 node_modules" level="project" />
   </component>
 </module>
