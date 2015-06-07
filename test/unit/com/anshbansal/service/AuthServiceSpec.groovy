@@ -1,20 +1,31 @@
 package com.anshbansal.service
 
+import com.anshbansal.domain.User
+import com.anshbansal.dto.LoginCredentials
+import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
+@Mock(User)
 @TestFor(AuthService)
 class AuthServiceSpec extends Specification {
 
-    def setup() {
-    }
+    void "test that only valid login credentials are authenticated"() {
 
-    def cleanup() {
-    }
+        setup: "Add one user"
+        User user = new User(email: config.defaults.email, password: config.defaults.password)
+        user.save()
 
-    void "test something"() {
+        and: "Get valid and invalid credentials"
+
+        LoginCredentials validCredentials = LoginCredentials.credentialsForEmail(user)
+        LoginCredentials invalidCredentials = LoginCredentials.emptyCredentials
+
+        expect: "Valid credentials are authenticated"
+        service.loginAuth(validCredentials)
+
+        and:
+        ! service.loginAuth(invalidCredentials)
+
     }
 }
