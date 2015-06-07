@@ -1,5 +1,8 @@
 package com.anshbansal.domain
 
+import groovy.transform.ToString
+
+@ToString(includeNames = true, includeFields = true, includePackage = false, excludes = 'password')
 class User {
 
     String email
