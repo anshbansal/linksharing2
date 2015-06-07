@@ -16,16 +16,19 @@ class AuthServiceSpec extends Specification {
         User user = new User(email: config.defaults.email, password: config.defaults.password)
         user.save()
 
-        and: "Get valid and invalid credentials"
+        when: "Valid credentials are authenticated"
+        Boolean statusForValidCredentials = service.loginAuth(LoginCredentials.credentialsForEmail(user))
 
-        LoginCredentials validCredentials = LoginCredentials.credentialsForEmail(user)
-        LoginCredentials invalidCredentials = LoginCredentials.emptyCredentials
+        then:
+        statusForValidCredentials
+    }
 
-        expect: "Valid credentials are authenticated"
-        service.loginAuth(validCredentials)
+    void "test that invalid login credentials are not authenticated"() {
+        when: "Invalid credentials are authenticated"
+        Boolean statusForInvalidCredentials = service.loginAuth(LoginCredentials.emptyCredentials)
 
-        and:
-        ! service.loginAuth(invalidCredentials)
-
+        then:
+        statusForInvalidCredentials != null
+        ! statusForInvalidCredentials
     }
 }

@@ -11,6 +11,6 @@ class AuthService {
     Boolean loginAuth(LoginCredentials credentials) {
         User foundUser = User.findByEmailAndPassword(credentials.email, credentials.password)
 
-        foundUser
+        foundUser ? true : false
     }
 }
