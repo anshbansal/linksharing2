@@ -2,11 +2,11 @@ env:
   - NODE_VERSION=0.11
 
 install:
+  #Installations for front-end dependencies
   - nvm install $NODE_VERSION
   - node --version
   - npm --version
   - git --version
-  - svn --version | head -n 1
   - npm install -g grunt-cli
   - npm install
 
