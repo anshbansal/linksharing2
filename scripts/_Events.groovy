@@ -1,18 +1,12 @@
 eventCompileStart = {kind ->
     // Ants Project is available via: kind.ant.project
-    executeGruntTasks()
+    updateJavascriptDependencies()
     // Obtain status and output
 }
  
-private void executeGruntTasks(){
+private void updateJavascriptDependencies(){
     println "| Load js dependencies from cache..."
-    def proc = "grunt".execute()  // execute default task to load dependencies from local cache.
+    def proc = "./node_modules/.bin/bower update --quiet".execute()
     proc.waitFor()                              
-    if(proc.exitValue()!=0){
-        println "| Error occured while loading dependencies from local cache : ${proc.err.text}"
-        println "| Try loading dependencies from web..."
-        proc = "grunt webInstall".execute()
-        proc.waitFor()                               // Wait for the command to finish
-        println "Output: ${proc.in.text}"
-    }
+    println "Output: ${proc.in.text}"
 }
