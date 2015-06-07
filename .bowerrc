@@ -1,3 +1,4 @@
 {
-  "directory" : "grails-app/assets/bower_components"
+  "cwd": "grails-app/conf",
+  "directory" : "../assets/bower_components"
 }
