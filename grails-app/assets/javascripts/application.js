@@ -18,3 +18,13 @@ if (typeof jQuery !== 'undefined') {
 		});
 	})(jQuery);
 }
+
+var myApp = angular.module('linksharing', []);
+
+myApp.controller('LoginController', function () {
+    var self = this;
+
+    self.login = function () {
+
+    }
+});
