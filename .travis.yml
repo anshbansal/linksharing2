@@ -31,3 +31,4 @@ cache:
   - $HOME/.m2
   - $HOME/.npm
   - $HOME/.nvm
+  - $HOME/.cache/bower/
