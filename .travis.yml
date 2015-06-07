@@ -7,7 +7,6 @@ install:
   - node --version
   - npm --version
   - git --version
-  - npm install -g grunt-cli
   - npm install
 
 language: groovy
