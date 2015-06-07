@@ -7,7 +7,5 @@ import spock.lang.Specification
 class AuthControllerSpec extends Specification {
 
     void "test something"() {
-        expect:
-        true
     }
 }
