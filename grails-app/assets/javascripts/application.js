@@ -21,10 +21,25 @@ if (typeof jQuery !== 'undefined') {
 
 var myApp = angular.module('linksharing', []);
 
-myApp.controller('LoginController', function () {
+myApp.controller('LoginController', ['$http', function ($http) {
     var self = this;
 
     self.login = function () {
-
+        $http({
+                url: ajaxLinks.auth.login,
+                method: "GET",
+                params: {
+                    email: self.email,
+                    password: self.password
+                }
+            }
+        )
+            .success(function (data) {
+                console.log(data);
+            })
+            .error(function () {
+                console.log("Problem in communicating with server");
+            });
     }
-});
+
+}]);
