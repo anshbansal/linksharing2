@@ -10,13 +10,13 @@
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
-	(function($) {
-		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
-		}).ajaxStop(function() {
-			$(this).fadeOut();
-		});
-	})(jQuery);
+    (function ($) {
+        $('#spinner').ajaxStart(function () {
+            $(this).fadeIn();
+        }).ajaxStop(function () {
+            $(this).fadeOut();
+        });
+    })(jQuery);
 }
 
 var myApp = angular.module('linksharing', []);
@@ -26,20 +26,19 @@ myApp.controller('LoginController', ['$http', function ($http) {
 
     self.login = function () {
         $http({
-                url: ajaxLinks.auth.login,
-                method: "GET",
-                params: {
-                    email: self.email,
-                    password: self.password
-                }
+            url: ajaxLinks.auth.login,
+            method: "GET",
+            params: {
+                email: self.email,
+                password: self.password
             }
-        )
-            .success(function (data) {
-                console.log(data);
-            })
-            .error(function () {
-                console.log("Problem in communicating with server");
-            });
+
+        }).success(function (data) {
+            console.log(data);
+
+        }).error(function () {
+            console.log("Problem in communicating with server");
+        });
     }
 
 }]);
