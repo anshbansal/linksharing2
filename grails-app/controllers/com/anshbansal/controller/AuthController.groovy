@@ -1,6 +1,6 @@
 package com.anshbansal.controller
 
-class AuthenticationController {
+class AuthController {
 
     def index() { }
 }
