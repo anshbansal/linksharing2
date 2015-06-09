@@ -11,6 +11,8 @@ class AuthService {
     Boolean loginAuth(LoginCredentials credentials) {
         User foundUser = User.findByEmailAndPassword(credentials.email, credentials.password)
 
+        log.debug "For login credentials $credentials user was $foundUser"
+
         foundUser ? true : false
     }
 }
