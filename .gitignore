@@ -33,10 +33,13 @@
 
 # "temporary" build files
 /target
+out
+
 .idea
 *.iml
 .project
 .classpath
+
 cobertura.ser
 web-app/bower-components
 grails-app/assets/bower_components

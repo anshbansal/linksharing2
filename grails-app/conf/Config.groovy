@@ -1,3 +1,5 @@
+import org.apache.log4j.Level
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -97,11 +99,24 @@ environments {
 
 // log4j configuration
 log4j.main = {
+
     appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%d %-5p [%c{2}](%x) %m%n')
+        console name: 'stdout',
+                layout:pattern(conversionPattern: '%d %-5p [%c{2}](%x) %m%n'),
+                threshold: Level.DEBUG
+
+        rollingFile name: 'linksharing2File',
+                file: 'logs/linksharing2.log'
+
+        rollingFile name: 'stacktrace',
+                file: 'logs/stacktrace.log'
     }
 
-    info "grails.app"
+    root {
+        debug 'linksharing2File'
+    }
+
+    debug "grails.app"
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
