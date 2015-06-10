@@ -17,3 +17,6 @@ private void updateJavascriptDependencies(){
         println "Output: ${proc.in.text}"
     }
 }
+
+//TODO Add event hook for clean -> Delete logs folder
+//TODO Add event hook for clean -> npm, bower prune

@@ -5,7 +5,8 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better 
 // to create separate JavaScript files as needed.
 //
-//= require jquery
+//= require serverConfig
+//= require jquery/dist/jquery
 //= require angular/angular
 //= require_self
 
@@ -26,7 +27,7 @@ myApp.controller('LoginController', ['$http', function ($http) {
 
     self.login = function () {
         $http({
-            url: ajaxLinks.auth.login,
+            url: serverConfig.ajaxLinks.auth.login,
             method: "GET",
             params: {
                 email: self.email,
