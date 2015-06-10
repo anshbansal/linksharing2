@@ -21,7 +21,7 @@ branches:
 script:
   - ./grailsw refresh-dependencies
   - ./grailsw test-app -echoOut -echoErr -coverage -xml
-  - karma start grails-app/conf/karma.conf.js
+  - karma start grails-app/conf/karma.conf.js --no-auto-watch --single-run --browsers PhantomJS
 
 after_success:
   - ./grailsw coveralls
