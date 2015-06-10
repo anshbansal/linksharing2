@@ -16,7 +16,7 @@
     "phantomjs": "^1.9.17"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install"
+    "postinstall": "./node_modules/.bin/bower install -o"
   },
   "author": "Aseem Bansal",
   "license": "MIT"
