@@ -19,8 +19,7 @@ branches:
     - master
 
 script:
-  - ./grailsw refresh-dependencies
-  - ./grailsw test-app -echoOut -echoErr -coverage -xml
+  - ./grailsw test-app --refresh-dependencies -echoOut -echoErr -coverage -xml
   - karma start grails-app/conf/karma.conf.js --no-auto-watch --single-run --browsers PhantomJS --log-level debug
 
 after_success:
