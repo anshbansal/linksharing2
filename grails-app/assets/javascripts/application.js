@@ -35,10 +35,10 @@ myApp.controller('LoginController', ['$http', function ($http) {
             }
 
         }).success(function (data) {
-            console.log(data);
+            self.status = 'Pass...';
 
         }).error(function () {
-            console.log("Problem in communicating with server");
+            self.status = "Failed...";
         });
     }
 
